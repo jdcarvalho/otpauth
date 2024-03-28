@@ -14,3 +14,20 @@ of applications and protecting user accounts from unauthorized access.
 The diagram below shows the typical OTP flow.
 
 ![Image](https://raw.githubusercontent.com/jdcarvalho/otpauth/master/app_core/static/img/otp-flow.png)
+
+### Steps to test this POC
+1. Migrate and create a superuser:
+
+```shell
+./manage.py migrate
+./manage.py createsuperuser
+```
+2. Run the application and login
+
+```shell
+./manage.py runserver
+```
+
+3. Activate two factor authentication at admin dashboard
+
+4. Logout then log in again
