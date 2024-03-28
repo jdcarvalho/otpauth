@@ -10,3 +10,7 @@ username/password combinations.
 Overall, this repository serves as a robust solution for implementing 
 two-factor authentication with OTPs in Django, enhancing the security posture
 of applications and protecting user accounts from unauthorized access.
+
+The diagram below shows the typical OTP flow.
+
+![Image](https://raw.githubusercontent.com/jdcarvalho/otpauth/master/app_core/static/img/otp-flow.png)
