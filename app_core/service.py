@@ -36,4 +36,3 @@ class OTPService(object):
         import pyotp
         totp = pyotp.TOTP(self.secret_key)
         return totp.verify(otp_code)
-
