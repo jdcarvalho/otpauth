@@ -9,10 +9,6 @@ class UserOTPData(models.Model):
         related_name='otpdata', null=False, blank=False,
     )
 
-    two_factor_enabled = models.BooleanField(
-        null=False, blank=False, default=False,
-    )
-
     otp_secret = models.CharField(
         max_length=255, null=True, blank=True, default=''
     )
