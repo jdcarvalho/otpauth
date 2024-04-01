@@ -1,0 +1,33 @@
+{% extends "admin/login.html" %}
+
+{% block content %}
+    {% if not request.user.otpdata.first or otp_secret %}
+        <form action="" method="post">
+            {% csrf_token %}
+            {% if otp_secret %}
+                <p><strong>OTP Secret:</strong></p>
+                <p>{{ otp_secret }}</p>
+                <p>Please scan the QR code below with Google Authenticator.</p>
+                <p style="text-align: center">{{ qr_code|safe }}</p>
+            {% else %}
+                {% if form_errors %}
+                    {% for error in form_errors %}
+                        <p class="errornote">
+                            {{ error }}
+                        </p>
+                    {% endfor %}
+                {% else %}
+                    <label>Do you want to enable two-factor authentication?</label>
+                {% endif %}
+            {% endif %}
+            <div class="submit-row">
+                <input type="submit" value="Enable">
+            </div>
+        </form>
+    {% else %}
+        <div class="submit-row">
+            <p>Two-factor authentication is already enabled for you</p>
+            <a href="{% url "admin:index" %}">Back Home</a>
+        </div>
+    {% endif %}
+{% endblock %}

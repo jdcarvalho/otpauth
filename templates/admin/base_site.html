@@ -1,0 +1,10 @@
+{% extends "admin/base_site.html" %}
+
+{% block userlinks %}
+    {% if user.is_active and user.is_staff %}
+        {% if not user.optdata %}
+            <a href="{% url "admin:setup-2fa" %}"> Two-factor auth </a> /
+        {% endif %}
+    {% endif %}
+    {{ block.super }}
+{% endblock %}

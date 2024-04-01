@@ -3,7 +3,7 @@ class OTPService(object):
 
     secret_key = ''
 
-    def __init__(self, secret_key):
+    def __init__(self, secret_key=None):
         self.secret_key = secret_key
 
     def generate_auth_qrcode(self):
@@ -25,7 +25,7 @@ class OTPService(object):
             qr_uri,
             image_factory=image_factory
         )
-        return qr_code_image
+        return qr_code_image.to_string().decode('utf_8')
 
     def validate_otp(self, otp_code):
         """

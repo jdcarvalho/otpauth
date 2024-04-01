@@ -13,5 +13,15 @@ class UserOTPData(models.Model):
         max_length=255, null=True, blank=True, default=''
     )
 
+    @staticmethod
+    def upsert_opt_data(user):
+        try:
+            otp_data = UserOTPData.objects.filter(user=user)[:1].get()
+            return otp_data
+        except UserOTPData.DoesNotExist:
+            otp_data = UserOTPData(user=user)
+            otp_data.save()
+            return otp_data
+
     class Meta:
         db_table = 'user_otp_data'
