@@ -13,7 +13,7 @@ of applications and protecting user accounts from unauthorized access.
 
 The diagram below shows the typical OTP flow.
 
-![Image](https://raw.githubusercontent.com/jdcarvalho/otpauth/master/app_core/static/img/otp-flow.png)
+![Image](https://raw.githubusercontent.com/jdcarvalho/otpauth/master/custom_admin/static/img/otp-flow.png)
 
 ### Steps to test this POC
 1. Make migrations, Migrate and create a superuser:
