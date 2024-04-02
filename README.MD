@@ -16,7 +16,18 @@ The diagram below shows the typical OTP flow.
 ![Image](https://raw.githubusercontent.com/jdcarvalho/otpauth/master/custom_admin/static/img/otp-flow.png)
 
 ### Steps to test this POC
-1. Make migrations, Migrate and create a superuser:
+1. Create a new enviroment for the project, update base package and install 
+the requirements.txt file content
+```shell
+python3.x -m venv venv
+source ./venv/bin/activate
+pip install --upgrade pip
+pip install --upgrade setuptools
+pip install --upgrade wheel
+pip install -r requirements.txt
+```
+
+2. Make migrations, Migrate and create a superuser:
 
 ```shell
 ./manage.py makemigrations
@@ -28,12 +39,12 @@ The diagram below shows the typical OTP flow.
 ./manage.py createsuperuser
 ```
 
-2. Run the application and login
+3. Run the application and login
 
 ```shell
 ./manage.py runserver
 ```
 
-3. Activate two-factor authentication at admin dashboard
+4. Activate two-factor authentication at admin dashboard
 
-4. Logout then log in again
+5. Logout then log in again
