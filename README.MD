@@ -1,6 +1,5 @@
 
 ### Two-Factor Authentication with OTP Repository
-#### https://joaodecarvalho.com/python/django/2fa/2025/06/25/poc-django-2fa-implementation/#/
 
 This repository provides a comprehensive implementation in Django of two-factor 
 authentication (2FA) using one-time passwords (OTP). 
